@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>Books - 示例 CSV 数据</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; padding: 24px; }
+    table { border-collapse: collapse; width: 100%; max-width: 800px; margin-bottom: 16px; }
+    th, td { border: 1px solid #ccc; padding: 8px 12px; text-align: left; }
+    th { background: #f5f5f5; }
+    .controls { margin-bottom: 12px; }
+    .note { color: #555; font-size: 0.9rem; }
+    .download { display: inline-block; padding: 8px 12px; border-radius: 6px; text-decoration: none; border: 1px solid #2b8aef; color: #0b63d6; }
+  </style>
+</head>
+<body>
+  <h1>示例书目表（CSV）</h1>
+
+  <div class="controls">
+    <!-- data URI 包含下面 CSV 内容，可用来下载 books_output.csv -->
+    <a class="download" href="data:text/csv;charset=utf-8,Book%20Title,Author%0AThe%20Hobbit,J.R.R.%20Tolkien%0ADune,Frank%20Herbert%0A1984,George%20Orwell%0ATo%20Kill%20a%20Mockingbird,Harper%20Lee%0AThe%20Lord%20of%20the%20Rings,J.R.R.%20Tolkien" download="books_output.csv">
+      Download CSV (保存为 books_output.csv)
+    </a>
+  </div>
+
+  <p class="note">说明：代码示例中使用的 <code>source_column="Book Title"</code>，因此 CSV 必须包含名为 <strong>Book Title</strong> 的列。下面表格就是 CSV 的可视化展示。</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Book Title</th>
+        <th>Author</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>The Hobbit</td><td>J.R.R. Tolkien</td></tr>
+      <tr><td>Dune</td><td>Frank Herbert</td></tr>
+      <tr><td>1984</td><td>George Orwell</td></tr>
+      <tr><td>To Kill a Mockingbird</td><td>Harper Lee</td></tr>
+      <tr><td>The Lord of the Rings</td><td>J.R.R. Tolkien</td></tr>
+    </tbody>
+  </table>
+
+  <h2>CSV 原始内容（可复制）</h2>
+  <pre>
+Book Title,Author
+The Hobbit,J.R.R. Tolkien
+Dune,Frank Herbert
+1984,George Orwell
+To Kill a Mockingbird,Harper Lee
+The Lord of the Rings,J.R.R. Tolkien
+  </pre>
+
+  <p class="note">使用方法：点击上面的“Download CSV”保存为 <code>books_output.csv</code>，然后运行你的 Python 脚本，代码会把 <code>Book Title</code> 列作为每个 Document 的 <code>metadata['source']</code>。</p>
+</body>
+</html>
